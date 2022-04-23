@@ -1,43 +1,77 @@
 import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() {  
+    const questions: any = [
+    {
+      question: 'whats 1 + 1',
+      a: '2',
+      b: '4',
+      c: '3',
+      d: '5',
+      rightAnswer: 'a'
+    },
+    {
+      question: 'whats 12 + 1',
+      a: '2',
+      b: '4',
+      c: '13',
+      d: '5',
+      rightAnswer: 'c'
+    },
+     {
+      question: 'Qual dos nomes abaixo e de um dos criadores do Facebook Inc. agora META',
+      a: 'Ellon Musk',
+      b: 'Mark Zuckeberg',
+      c: 'Bill Gates',
+      d: 'Jeff Bazzos',
+      rightAnswer: 'b'
+    }
+  ]
+
+  const [question, setQuestion] = useState(questions[0])
+
+  const generateId = () => {
+    const id: int = Math.floor(Math.random() * 50)
+    console.log('gened:', id)
+    verifyQuestion(id)
+  }  
+
+  const renderQuestion = id => {
+    console.log('rendering:', id); 
+    return setQuestion(questions[id])
+  }
+  const verifyQuestion = id => {
+    console.log('verifying:', id)
+    if (questions[id]) return renderQuestion(id)
+    return generateId()
+
+  }
+
+  const verifyAnswer = (id: any, question: any) => {
+    if (id === question.rightAnswer) {
+      console.log('certa a resposta')
+      return generateId()
+    }
+    return console.log('OH OH OH!', id)
+  }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <h1>Quiz App</h1>
+      
+      { question && (
+          <div className="questionContainer"> 
+            <p className="question">{question.question}</p>
+            <ul className="options">
+              <li className="option" id="a" onClick={(e) => verifyAnswer(e.target.id, question)}>{question.a}</li>
+              <li className="option" id="b" onClick={(e) => verifyAnswer(e.target.id, question)}>{question.b}</li>
+              <li className="option" id="c" onClick={(e) => verifyAnswer(e.target.id, question)}>{question.c}</li>
+              <li className="option" id="d" onClick={(e) => verifyAnswer(e.target.id, question)}>{question.d}</li>
+            </ul>
+          </div>
+          )
+        }
     </div>
   )
 }
