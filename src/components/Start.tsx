@@ -26,11 +26,11 @@ const Start: React.FC = () => {
     verifyQuestion(id)
   }  
 
-  const renderQuestion = id => {
+  const renderQuestion = (id: any )=> {
     console.log('rendering:', id); 
     return setQuestion(questions[id])
   }
-  const verifyQuestion = id => {
+  const verifyQuestion = (id: any) => {
     console.log('verifying:', id)
     if (questions[id]) return renderQuestion(id)
     return generateId()
