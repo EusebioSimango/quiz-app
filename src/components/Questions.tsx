@@ -2,18 +2,18 @@ import { useState } from 'react'
 import Start from  './Start'
 
 const Questions: React.FC = () => {
-	const [question, setQuestion] = useState(null)
-	const [optionA, setOptionA] = useState(null)
-	const [optionB, setOptionB] = useState(null)
-	const [optionC, setOptionC] = useState(null)
-	const [optionD, setOptionD] = useState(null)
-	const [rightOption, setRightOption] = useState(null)
+	const [question, setQuestion] = useState<any>('')
+	const [optionA, setOptionA] = useState<any>('')
+	const [optionB, setOptionB] = useState<any>('')
+	const [optionC, setOptionC] = useState<any>('')
+	const [optionD, setOptionD] = useState<any>('')
+	const [rightOption, setRightOption] = useState<any>('')
 
-	const handleSubmit: any = e => {
+	const handleSubmit: any = (e: any) => {
 		e.preventDefault()
 		const data: any = {
 			question: question, 
-			a:optionA,
+			a: optionA,
 		 	b: optionB, 
 			c: optionC,
 			d: optionD,
