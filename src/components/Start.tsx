@@ -52,15 +52,6 @@ const Start: React.FC = () => {
     verifyAnswer(id, question)
   }
 
-
-  // function handleClick (event:  React.MouseEvent<HTMLLIElement, MouseEvent>){
-  //   // const id: any = ((this).id)
-  //   console.log(event.currentTarget.id)
-  //   // verifyAnswer(id, question)
-  // }
-
-
-
   return (
     <>
       {question && (
