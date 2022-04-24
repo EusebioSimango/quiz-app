@@ -13,9 +13,8 @@ function App() {
       
        <Router>
         <Routes>
-           <Route exect path="/" element={ <Start /> } />
-          <Route path='/question/add/' element={ <Questions/> } />
-
+           <Route path="/" element={ <Start /> } />
+           <Route path="/question/add/" element={ <Questions/> } />
         </Routes>
        </Router>
     </div>
