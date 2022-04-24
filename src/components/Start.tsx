@@ -21,7 +21,7 @@ const Start: React.FC = () => {
   
 
   const generateId = () => {
-    const id: int = Math.floor(Math.random() * 50)
+    const id: any = Math.floor(Math.random() * 50)
     console.log('gened:', id)
     verifyQuestion(id)
   }  
