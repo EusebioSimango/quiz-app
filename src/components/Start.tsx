@@ -3,19 +3,21 @@ import { useState, useEffect } from 'react'
 const Start: React.FC = () => {
   const [questions, setQuestions] = useState(null)
 
+
 	useEffect(() => {
     fetch('https://quiz-app-api-three.vercel.app/questions/all')
       .then(response => response.json())
-      .then(json => {
-        const data = json
-        console.log(data)
-        setQuestions(data)
-        setQuestion(questions[0])
-      })
+      .then(async json => {
+        const data = await json
+        await setQuestions(data)
+       })
   }, [])
 
+  useEffect(() => {
+    if (questions) setQuestion(questions[0])
+  }, [questions])
 
-const [question, setQuestion] = questions ? useState(questions[0]) : useState(null) 
+  const [question, setQuestion] =  useState(null) 
   
 
   const generateId = () => {
