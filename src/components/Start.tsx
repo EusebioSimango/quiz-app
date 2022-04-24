@@ -4,7 +4,7 @@ const Start: React.FC = () => {
   const [questions, setQuestions] = useState(null)
 
 	useEffect(() => {
-    fetch('http://localhost:8080/questions/all')
+    fetch('https://quiz-app-api-three.vercel.app/questions/all')
       .then(response => response.json())
       .then(data => { 
         setQuestions(data)
