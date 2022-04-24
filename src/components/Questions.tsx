@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Start from  './Start'
 
 const Questions: React.FC = () => {
-	console.log(Start.questions)
 	const [question, setQuestion] = useState(null)
 	const [optionA, setOptionA] = useState(null)
 	const [optionB, setOptionB] = useState(null)
@@ -20,8 +19,6 @@ const Questions: React.FC = () => {
 			d: optionD,
 			rightAnswer: rightOption
 		}
-		questions.push(data)
-		console.log(questions)
 	}
 
 	return (
