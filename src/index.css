@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: darkorange;
+  background-color: #1e1e11;
 }
 
 code {
@@ -18,16 +18,16 @@ code {
 }
 
 h1 {
-  color: purple;
+  color: #fff;
   padding: 20px;
   margin-bottom: 60px;
 }
 
 .question {
-  color: #000;
+  color: #fff;
   font-size: 18px;
   max-width: 300px;
-  background-color: tomato;
+  background-color: #51e337;
   padding: 20px;
   border-radius: 10px;
 }
@@ -44,17 +44,33 @@ li {
   list-style: none;
 }
 .option {
-  background-color: #f7f7f7;
+  background-color: yellow;
   padding: 10px;
   transition: .6s;
   border-radius: 10px;
+  color:  #5c5c5c;
 }
 
 .option:hover {
-  background-color: #ccc;
+  background-color: #ade700;
 }
 
 .questionContainer {
   min-width: 300px;
   max-width: 600px;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, button {
+  background-color: yellow;
+  padding: 10px;
+  min-width: 300px;
+  max-width: 600px;
+  border-radius: 10px;
 }
