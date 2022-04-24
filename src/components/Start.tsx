@@ -6,8 +6,10 @@ const Start: React.FC = () => {
 	useEffect(() => {
     fetch('https://quiz-app-api-three.vercel.app/questions/all')
       .then(response => response.json())
-      .then(data => { 
-        setQuestions(data.response)
+      .then(json => {
+        const data = json
+        console.log(data)
+        setQuestions(data)
         setQuestion(questions[0])
       })
   }, [])
