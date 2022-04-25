@@ -5,7 +5,8 @@ const Start: React.FC = () => {
 
 
   useEffect(() => {
-    fetch('https://quiz-app-api-three.vercel.app/questions/all')
+    // fetch('https://quiz-app-api-three.vercel.app/questions/all')
+    fetch('http://localhost:8080/questions/all')
       .then(response => response.json())
       .then(async json => {
         const data = await json
@@ -39,7 +40,21 @@ const Start: React.FC = () => {
 
 
   const verifyAnswer = (id: any, question: any) => {
-    if (id === question.rightAnswer) {
+    const rigthOption: any = (id === question.rightAnswer)
+    const liElements = document.querySelectorAll('.option') as HTMLLIElement
+
+    console.log(liElements)
+    liElements.forEach(li => {
+      if (li.id === question.rightAnswer) {
+        li.style.backgroundColor = 'green'
+        li.style.color = '#fff'
+        console.log('estilizar certo aqui', li.id)
+      } else {
+        console.log('aqui errado!!', li.id)
+      }
+    })
+
+    if (rigthOption) {
       console.log('certa a resposta')
       return generateId()
     }
