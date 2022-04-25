@@ -49,6 +49,7 @@ li {
   transition: .6s;
   border-radius: 10px;
   color:  #5c5c5c;
+  cursor: pointer;
 }
 
 .option:hover {

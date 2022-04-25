@@ -15,7 +15,7 @@ const Start: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    if (questions) setQuestion(questions[0])
+    questions ? generateId() : null
   }, [questions])
 
   const [question, setQuestion] = useState<any>(null)
@@ -28,6 +28,13 @@ const Start: React.FC = () => {
   }
 
   const renderQuestion = (id: any) => {
+    const liElements = document.querySelectorAll('.option') as HTMLLIElement
+    liElements.forEach(li => {
+      li.style.transition = '.6'
+      li.style.color = '#5c5c5c'
+      li.style.backgroundColor = 'yellow'
+      console.log('0')
+    })
     console.log('rendering:', id);
     return setQuestion(questions[id])
   }
@@ -41,11 +48,12 @@ const Start: React.FC = () => {
   const cleanOptions: any = () => {
     const liElements = document.querySelectorAll('.option') as HTMLLIElement
     liElements.forEach(li => {
+      li.style.transition = 'unset'
       li.style.color = '#5c5c5c'
       li.style.backgroundColor = 'yellow'
       console.log('0')
     })
-
+    return generateId()
   }
 
   const verifyAnswer = (id: any, question: any) => {
@@ -75,7 +83,7 @@ const Start: React.FC = () => {
       }
     }) 
     setTimeout(() => {
-      generateId()
+      
       return cleanOptions()
     }, 1000)
   }
