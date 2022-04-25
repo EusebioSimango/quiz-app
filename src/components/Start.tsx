@@ -29,7 +29,7 @@ const Start: React.FC = () => {
 
   const renderQuestion = (id: any) => {
     const liElements = document.querySelectorAll('.option') as NodeListOf<HTMLLIElement>
-    ([liElements])!.forEach((li: any) => {
+    liElements.forEach((li: any) => {
       li.style.transition = '.6s'
     })
     console.log('rendering:', id);
@@ -44,7 +44,7 @@ const Start: React.FC = () => {
 
   const cleanOptions: any = () => {
     const liElements = document.querySelectorAll('.option') as NodeListOf<HTMLLIElement>
-    ([liElements])!.forEach((li: any) => {
+    liElements.forEach((li: any) => {
       li.style.transition = 'unset'
       li.style.color = '#5c5c5c'
       li.style.backgroundColor = 'yellow'
@@ -60,7 +60,7 @@ const Start: React.FC = () => {
     console.log(liElements)
 
     if (rigthOption) {
-      ([liElements])!.forEach((li: any) => {
+      liElements.forEach((li: any) => {
         if (li.id === question.rightAnswer) {
           li.style.backgroundColor = 'green'
           li.style.color = '#fff'
@@ -73,7 +73,7 @@ const Start: React.FC = () => {
       return
     }
 
-    ([liElements])!.forEach((li: any) => {
+    liElements.forEach((li: any) => {
       if (li.id === id) {
         li.style.backgroundColor = 'red'
         li.style.color = '#fff'
