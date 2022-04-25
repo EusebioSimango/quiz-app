@@ -61,8 +61,11 @@ const Start: React.FC = () => {
           li.style.color = '#fff'
         }
       })
-      cleanOptions()      
-      return generateId()
+      setTimeout(() => {
+        generateId()
+        return cleanOptions()
+      }, 1000)
+      return
     }
 
     liElements.forEach(li => {
