@@ -30,10 +30,7 @@ const Start: React.FC = () => {
   const renderQuestion = (id: any) => {
     const liElements = document.querySelectorAll('.option') as HTMLLIElement
     liElements.forEach(li => {
-      li.style.transition = '.6'
-      li.style.color = '#5c5c5c'
-      li.style.backgroundColor = 'yellow'
-      console.log('0')
+      li.style.transition = '.6s'
     })
     console.log('rendering:', id);
     return setQuestion(questions[id])
