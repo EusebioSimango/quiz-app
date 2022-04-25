@@ -44,20 +44,23 @@ const Start: React.FC = () => {
     const liElements = document.querySelectorAll('.option') as HTMLLIElement
 
     console.log(liElements)
-    liElements.forEach(li => {
-      if (li.id === question.rightAnswer) {
-        li.style.backgroundColor = 'green'
-        li.style.color = '#fff'
-        console.log('estilizar certo aqui', li.id)
-      } else {
-        console.log('aqui errado!!', li.id)
-      }
-    })
 
     if (rigthOption) {
-      console.log('certa a resposta')
+      liElements.forEach(li => {
+        if (li.id === question.rightAnswer) {
+          li.style.backgroundColor = 'green'
+          li.style.color = '#fff'
+        }
+      })      
       return generateId()
     }
+
+    liElements.forEach(li => {
+      if (li.id === id) {
+        li.style.backgroundColor = 'red'
+        li.style.color = '#fff'
+      }
+    }) 
     return console.log('OH OH OH!', id)
   }
 
