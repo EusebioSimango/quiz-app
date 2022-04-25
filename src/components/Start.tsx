@@ -38,6 +38,15 @@ const Start: React.FC = () => {
 
   }
 
+  const cleanOptions: any = () => {
+    const liElements = document.querySelectorAll('.option') as HTMLLIElement
+    liElements.forEach(li => {
+      li.style.color = '#5c5c5c'
+      li.style.backgroundColor = 'yellow'
+      console.log('0')
+    })
+
+  }
 
   const verifyAnswer = (id: any, question: any) => {
     const rigthOption: any = (id === question.rightAnswer)
@@ -51,7 +60,8 @@ const Start: React.FC = () => {
           li.style.backgroundColor = 'green'
           li.style.color = '#fff'
         }
-      })      
+      })
+      cleanOptions()      
       return generateId()
     }
 
@@ -61,7 +71,10 @@ const Start: React.FC = () => {
         li.style.color = '#fff'
       }
     }) 
-    return console.log('OH OH OH!', id)
+    setTimeout(() => {
+      generateId()
+      return cleanOptions()
+    }, 1000)
   }
 
   const handleClick = (event: React.MouseEvent<HTMLLIElement>): void => {
