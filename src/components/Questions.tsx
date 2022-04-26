@@ -25,12 +25,12 @@ const Questions: React.FC = () => {
 		<div>
 			<form onSubmit={handleSubmit}>
 				<input placeholder="Question" onChange={e => setQuestion(e.target.value)}/>
-			  <input placeholder="Option A" onChange={e => setOptionA(e.target.value)}/>
- 			  <input placeholder="Option B" onChange={e => setOptionB(e.target.value)}/>
-			  <input placeholder="Option C" onChange={e => setOptionC(e.target.value)}/>
-			  <input placeholder="Option D" onChange={e => setOptionD(e.target.value)}/>
-			  <input placeholder="Rigth Option, eg. c" onChange={e => setRightOption(e.target.value)}/>
-			  <button type="submit">Send Question</button>
+				<input placeholder="Option A" onChange={e => setOptionA(e.target.value)}/>
+				<input placeholder="Option B" onChange={e => setOptionB(e.target.value)}/>
+				<input placeholder="Option C" onChange={e => setOptionC(e.target.value)}/>
+				<input placeholder="Option D" onChange={e => setOptionD(e.target.value)}/>
+				<input placeholder="Rigth Option, eg. c" onChange={e => setRightOption(e.target.value)}/>
+				<button type="submit">Send Question</button>
 			</form>
 		</div>
 	)
