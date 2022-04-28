@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Quiz App</h1>
+      <Link to="/question/add"><h1>Quiz App!</h1></Link>
       
        <Router>
         <Routes>
@@ -18,7 +18,6 @@ function App() {
         </Routes>
        </Router>
 
-       <Link to="/question/add">Add</Link>
     </div>
   )
 }
