@@ -44,7 +44,7 @@ const Questions: React.FC = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<input id="inputQuestion" placeholder="Question" autofocus value={question} onChange={e => setQuestion(e.target.value)}/>
+				<input id="inputQuestion" placeholder="Question" autoFocus value={question} onChange={e => setQuestion(e.target.value)}/>
 				<div className="optionsContainer">
 					<input placeholder="Option A" value={optionA} onChange={e => setOptionA(e.target.value)}/>
 					<input placeholder="Option B" value={optionB} onChange={e => setOptionB(e.target.value)}/>
