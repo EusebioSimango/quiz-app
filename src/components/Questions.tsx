@@ -9,6 +9,17 @@ const Questions: React.FC = () => {
 	const [optionD, setOptionD] = useState<any>('')
 	const [rightOption, setRightOption] = useState<any>('')
 
+	const sendRequest = (data: any) => {
+		fetch('http://localhost:8080/questions/all', {
+			method: 'POST',
+			headers: {
+				'Content-Type': "application/json"
+			},
+			body: JSON.stringify(data)
+		}).then(response => response.json())
+			.then(json => console.log(json))
+	}
+
 	const handleSubmit: any = (e: any) => {
 		e.preventDefault()
 		const data: any = {
@@ -19,18 +30,29 @@ const Questions: React.FC = () => {
 			d: optionD,
 			rightAnswer: rightOption
 		}
+		const inputQuestion: any = document.querySelector('#inputQuestion')!
+		setOptionA('')
+		setOptionB('')
+		setOptionC('')
+		setOptionD('')
+		setQuestion('')
+		setRightOption('')
+		inputQuestion.focus()
+		return sendRequest(data)
 	}
 
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<input placeholder="Question" onChange={e => setQuestion(e.target.value)}/>
-				<input placeholder="Option A" onChange={e => setOptionA(e.target.value)}/>
-				<input placeholder="Option B" onChange={e => setOptionB(e.target.value)}/>
-				<input placeholder="Option C" onChange={e => setOptionC(e.target.value)}/>
-				<input placeholder="Option D" onChange={e => setOptionD(e.target.value)}/>
-				<input placeholder="Rigth Option, eg. c" onChange={e => setRightOption(e.target.value)}/>
-				<button type="submit">Send Question</button>
+				<input id="inputQuestion" placeholder="Question" autofocus value={question} onChange={e => setQuestion(e.target.value)}/>
+				<div className="optionsContainer">
+					<input placeholder="Option A" value={optionA} onChange={e => setOptionA(e.target.value)}/>
+					<input placeholder="Option B" value={optionB} onChange={e => setOptionB(e.target.value)}/>
+					<input placeholder="Option C" value={optionC} onChange={e => setOptionC(e.target.value)}/>
+					<input placeholder="Option D" value={optionD} onChange={e => setOptionD(e.target.value)}/>
+					<input placeholder="Rigth Option, eg. c" value={rightOption} onChange={e => setRightOption(e.target.value)}/>
+					<button type="submit">Send Question</button>
+				</div>
 			</form>
 		</div>
 	)
