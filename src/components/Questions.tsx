@@ -10,7 +10,7 @@ const Questions: React.FC = () => {
 	const [rightOption, setRightOption] = useState<any>('')
 
 	const sendRequest = (data: any) => {
-		fetch('http://localhost:8080/questions/all', {
+		fetch('https://quiz-app-api-three.vercel.app/questions/all', {
 			method: 'POST',
 			headers: {
 				'Content-Type': "application/json"
