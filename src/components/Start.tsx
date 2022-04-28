@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Start: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
@@ -105,6 +106,7 @@ const Start: React.FC = () => {
               onClick={handleClick}>
               {question.d}</li>
           </ul>
+          <Link to="/question/add">Add</Link>
         </div>
       )}
     </>
