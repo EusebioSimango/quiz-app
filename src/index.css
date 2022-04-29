@@ -111,3 +111,13 @@ input, button {
 .optionsContainer input {
   outline-color: #349323;
 }
+
+a {
+    background-color: #51e337;
+    color: #fff;
+    display: block;    
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 40px;
+}
