@@ -106,7 +106,7 @@ const Start: React.FC = () => {
               onClick={handleClick}>
               {question.d}</li>
           </ul>
-          <Link to="/question-add">Add</Link>
+          <Link to="/add-question">Add Question</Link>
         </div>
       )}
     </>
