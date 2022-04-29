@@ -14,7 +14,7 @@ function App() {
        <Router>
         <Routes>
             <Route path="/" element={ <Start /> } />
-            <Route path="question-add" element={ <Questions/> } />
+            <Route path="add-question" element={ <Questions /> } />
             <Route path="*" element={ <Start /> } />
         </Routes>
        </Router>
