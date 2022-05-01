@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const Start: React.FC = () => {
+const Game: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
 
 
   useEffect(() => {
-    fetch('https://quiz-app-api-three.vercel.app/questions/all')
-    // fetch('http://localhost:8080/questions/all')
+    // fetch('https://quiz-app-api-three.vercel.app/questions/all')
+    fetch('http://localhost:8080/questions/all')
       .then(response => response.json())
       .then(async json => {
         const data = await json
@@ -113,4 +113,4 @@ const Start: React.FC = () => {
   )
 }
 
-export default Start
+export default Game

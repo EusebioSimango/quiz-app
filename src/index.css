@@ -121,3 +121,30 @@ a {
     border-radius: 8px;
     margin-top: 40px;
 }
+
+/*HOME PAGE*/
+
+#home-page {
+
+}
+
+#home-page .header {
+  color: #fff;
+  font-family: monospace;
+  font-stretch: ;
+}
+
+#home-page .header .counter {
+  background-color: #fff;
+}
+
+#home-page .main a {
+  transition: .6s;
+}
+
+#home-page .main a:hover{
+  background-color: #ccc;
+  color: #51e337;
+
+font-weight: bolder;
+}

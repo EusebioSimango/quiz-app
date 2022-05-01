@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {  BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Questions from './components/Questions'
-import Start from './components/Start'
+import Game from './components/Game'
 import HomePage from './components/HomePage'
 import './App.css'
 
@@ -16,7 +16,7 @@ function App() {
         <Routes>
             <Route path="/" element={ <HomePage /> } />
             <Route path="add-question" element={ <Questions /> } />
-            <Route path="game" element={ <Start /> } />
+            <Route path="game" element={ <Game /> } />
         </Routes>
        </Router>
     </div>
