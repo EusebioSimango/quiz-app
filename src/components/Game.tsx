@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Game: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
-
+  const [score, setScore] = useState<numer>(0)
 
   useEffect(() => {
     // fetch('https://quiz-app-api-three.vercel.app/questions/all')
@@ -67,11 +67,12 @@ const Game: React.FC = () => {
           li.style.color = '#fff'
         }
       })
+      
       setTimeout(() => {
         generateId()
         return cleanOptions()
       }, 1000)
-      return
+      return setScore(score + 1)
     }
 
     liElements.forEach((li: any) => {
@@ -94,6 +95,7 @@ const Game: React.FC = () => {
     <>
       {question && (
         <div className="questionContainer">
+        <span>Score: { score }</span>
           <p className="question">{question.question}</p>
           <ul className="options">
             <li className="option" id="a"
