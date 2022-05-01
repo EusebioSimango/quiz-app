@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {  BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Questions from './components/Questions'
 import Start from './components/Start'
+import HomePage from './components/HomePage'
 import './App.css'
 
 function App() {  
@@ -13,9 +14,9 @@ function App() {
       
        <Router>
         <Routes>
-            <Route path="/" element={ <Start /> } />
+            <Route path="/" element={ <HomePage /> } />
             <Route path="add-question" element={ <Questions /> } />
-            <Route path="*" element={ <Start /> } />
+            <Route path="game" element={ <Start /> } />
         </Routes>
        </Router>
     </div>
