@@ -1,9 +1,18 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import TimeOut from './TimeOut'
 
 const Game: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
   const [score, setScore] = useState<numer>(0)
+  //TEST
+  const [timeover, setTimeover] = useState<boolean>(false)
+
+  const startCountDown = () => {
+    setTimeout(() => {
+      setTimeover(true)
+    }, 15000)
+  }
 
   useEffect(() => {
     // fetch('https://quiz-app-api-three.vercel.app/questions/all')
@@ -34,6 +43,7 @@ const Game: React.FC = () => {
       li.style.transition = '.6s'
     })
     console.log('rendering:', id);
+    startCountDown()
     return setQuestion(questions[id])
   }
   const verifyQuestion = (id: any) => {
@@ -109,7 +119,8 @@ const Game: React.FC = () => {
               {question.d}</li>
           </ul>
           <Link to="/add-question">Add Question</Link>
-        </div>
+          { timeover && <TimeOut /> }
+        </div>    
       )}
     </>
   )
