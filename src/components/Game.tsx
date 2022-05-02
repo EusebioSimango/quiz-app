@@ -64,8 +64,8 @@ const Game: React.FC = () => {
     return generateId()
   }
 
-  const verifyAnswer = (id: any, question: any) => {
-    const rigthOption: any = (id === question.rightAnswer)
+  const verifyAnswer = (id: number, question: any) => {
+    const rigthOption: boolean = (id === question.rightAnswer)
     const liElements = document.querySelectorAll('.option') as NodeListOf<HTMLLIElement>
 
     console.log(liElements)
