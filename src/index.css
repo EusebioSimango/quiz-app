@@ -124,14 +124,9 @@ a {
 
 /*HOME PAGE*/
 
-#home-page {
-
-}
-
 #home-page .header {
   color: #fff;
   font-family: monospace;
-  font-stretch: ;
 }
 
 #home-page .header .counter {
@@ -153,8 +148,10 @@ font-weight: bolder;
 
 #timeout {
   position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   top: 0;
-  left 0;
   right: 0;
   width: 100vw;
   height: 100vh;
@@ -163,4 +160,10 @@ font-weight: bolder;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#timeout.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }

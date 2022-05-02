@@ -10,7 +10,7 @@ const Game: React.FC = () => {
 
   const startCountDown = () => {
     setTimeout(() => {
-      setTimeover(true)
+      Refdiv.current?.classList.add('active')
     }, 15000)
   }
 
