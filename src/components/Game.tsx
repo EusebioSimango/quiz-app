@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import TimeOut from './TimeOut'
 
 const Game: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
-  const [score, setScore] = useState<numer>(0)
+  const [score, setScore] = useState<number>(0)
   //TEST
   const [timeover, setTimeover] = useState<boolean>(false)
 
@@ -77,7 +77,7 @@ const Game: React.FC = () => {
           li.style.color = '#fff'
         }
       })
-      
+
       setTimeout(() => {
         generateId()
         return cleanOptions()
@@ -90,7 +90,7 @@ const Game: React.FC = () => {
         li.style.backgroundColor = 'red'
         li.style.color = '#fff'
       }
-    }) 
+    })
     setTimeout(() => {
       return cleanOptions()
     }, 1000)
@@ -101,11 +101,13 @@ const Game: React.FC = () => {
     verifyAnswer(id, question)
   }
 
+  const Refdiv = useRef<HTMLDivElement>(null)
+
   return (
     <>
       {question && (
         <div className="questionContainer">
-        <span>Score: { score }</span>
+          <span>Score: {score}</span>
           <p className="question">{question.question}</p>
           <ul className="options">
             <li className="option" id="a"
@@ -119,8 +121,8 @@ const Game: React.FC = () => {
               {question.d}</li>
           </ul>
           <Link to="/add-question">Add Question</Link>
-          { timeover && <TimeOut /> }
-        </div>    
+          <TimeOut ref={Refdiv} />
+        </div>
       )}
     </>
   )

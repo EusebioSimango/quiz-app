@@ -1,10 +1,14 @@
-import React,  { useState, useEffect } from 'react'
+import React, { useState, useEffect, RefObject } from 'react'
 import { Link } from 'react-router-dom'
 
-const TimeOut: React.FC = () => {
+interface Props {
+	ref: RefObject<HTMLDivElement>
+}
+
+const TimeOut: React.FC<Props> = (props) => {
 
 	return (
-		<div id="timeout">
+		<div ref={props.ref} id="timeout">
 			<Link to="/game">PLAY AGAIN</Link>
 		</div>
 	)
