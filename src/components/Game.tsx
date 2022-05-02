@@ -20,7 +20,7 @@ const Game: React.FC = () => {
       .then(response => response.json())
       .then(async json => {
         const data = await json
-        await setQuestions(data)
+        setQuestions(data)
       })
   }, [])
 
@@ -32,12 +32,12 @@ const Game: React.FC = () => {
 
 
   const generateId = () => {
-    const id: any = Math.floor(Math.random() * 50)
+    const id: number = Math.floor(Math.random() * 50)
     console.log('gened:', id)
     verifyQuestion(id)
   }
 
-  const renderQuestion = (id: any) => {
+  const renderQuestion = (id: number) => {
     const liElements = document.querySelectorAll('.option') as NodeListOf<HTMLLIElement>
     liElements.forEach((li: any) => {
       li.style.transition = '.6s'
@@ -46,7 +46,7 @@ const Game: React.FC = () => {
     startCountDown()
     return setQuestion(questions[id])
   }
-  const verifyQuestion = (id: any) => {
+  const verifyQuestion = (id: number) => {
     console.log('verifying:', id)
     if (questions[id]) return renderQuestion(id)
     return generateId()
