@@ -68,7 +68,6 @@ const Game: React.FC = () => {
     const rigthOption: boolean = (id === question.rightAnswer)
     const liElements = document.querySelectorAll('.option') as NodeListOf<HTMLLIElement>
 
-    console.log(liElements)
 
     if (rigthOption) {
       liElements.forEach((li: any) => {
@@ -120,7 +119,6 @@ const Game: React.FC = () => {
               onClick={handleClick}>
               {question.d}</li>
           </ul>
-          <Link to="/add-question">Add Question</Link>
           <TimeOut ref={Refdiv} />
         </div>
       )}
