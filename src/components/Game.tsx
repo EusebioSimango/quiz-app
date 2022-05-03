@@ -119,7 +119,7 @@ const Game: React.FC = () => {
               onClick={handleClick}>
               {question.d}</li>
           </ul>
-          <TimeOut ref={Refdiv} />
+          <TimeOut Ref={Refdiv} />
         </div>
       )}
     </>

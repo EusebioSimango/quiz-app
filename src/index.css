@@ -160,6 +160,7 @@ font-weight: bolder;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: .6s;
 }
 
 #timeout.active {
