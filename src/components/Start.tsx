@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom'
 const Start: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
 
-
   useEffect(() => {
     fetch('https://quiz-app-api-three.vercel.app/questions/all')
-    // fetch('http://localhost:8080/questions/all')
+      // fetch('http://localhost:3333/questions/all')
       .then(response => response.json())
       .then(async json => {
         const data = await json
-        await setQuestions(data)
+        setQuestions(data)
       })
   }, [])
 
@@ -79,7 +78,7 @@ const Start: React.FC = () => {
         li.style.backgroundColor = 'red'
         li.style.color = '#fff'
       }
-    }) 
+    })
     setTimeout(() => {
       return cleanOptions()
     }, 1000)
