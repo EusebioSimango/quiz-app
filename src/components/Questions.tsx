@@ -19,6 +19,11 @@ const Questions: React.FC = () => {
 		}).then(response => response.json())
 			.then(json => {
 				console.log('Questao adicionada!')
+				alert("Questao adicionada!")
+				return
+			}).catch( err => {
+				console.log('error:', err)
+				alert(`error: ${err}`)
 				return
 			})
 	}
