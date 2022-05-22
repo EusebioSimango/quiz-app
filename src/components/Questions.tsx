@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/:/import { useState } from 'react'
 
 
 const Questions: React.FC = () => {
@@ -10,7 +10,7 @@ const Questions: React.FC = () => {
 	const [rightOption, setRightOption] = useState<any>('')
 
 	const sendRequest = (data: any) => {
-		fetch('https://quizappapi.000webhostapp.com/', {
+		fetch('https://quizappapi.000webhostapp.com', {
 			method: 'POST',
 			headers: {
 				'Content-Type': "application/json"
