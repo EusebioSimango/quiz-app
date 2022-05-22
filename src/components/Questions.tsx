@@ -10,14 +10,13 @@ const Questions: React.FC = () => {
 	const [rightOption, setRightOption] = useState<any>('')
 
 	const sendRequest = (data: any) => {
-		fetch('https://quiz-app-api-three.vercel.app/questions/all', {
+		fetch('https://quizappapi.000webhostapp.com/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': "application/json"
 			},
 			body: JSON.stringify(data)
-		}).then(response => response.json())
-			.then(json => {
+		}).then(response => {
 				console.log('Questao adicionada!')
 				alert("Questao adicionada!")
 				return

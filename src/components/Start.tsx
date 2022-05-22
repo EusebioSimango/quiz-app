@@ -5,8 +5,8 @@ const Start: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
 
   useEffect(() => {
-    fetch('https://quiz-app-api-three.vercel.app/questions/all')
-      // fetch('http://localhost:3333/questions/all')
+    // fetch('https://quiz-app-api-three.vercel.app/questions/all')
+    fetch('https://quizappapi.000webhostapp.com/')
       .then(response => response.json())
       .then(async json => {
         const data = await json
@@ -96,14 +96,14 @@ const Start: React.FC = () => {
           <p className="question">{question.question}</p>
           <ul className="options">
             <li className="option" id="a"
-              onClick={handleClick}>{question.a}</li>
+              onClick={handleClick}>{question.optionA}</li>
             <li className="option" id="b"
-              onClick={handleClick}>{question.b}</li>
+              onClick={handleClick}>{question.optionB}</li>
             <li className="option" id="c"
-              onClick={handleClick}>{question.c}</li>
+              onClick={handleClick}>{question.optionC}</li>
             <li className="option" id="d"
               onClick={handleClick}>
-              {question.d}</li>
+              {question.optionD}</li>
           </ul>
           <Link to="/add-question">Add Question</Link>
         </div>
