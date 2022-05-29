@@ -10,7 +10,7 @@ const Questions: React.FC = () => {
 	const [rightOption, setRightOption] = useState<any>('')
 
 	const sendRequest = (data: any) => {
-		fetch('https://quizappapi.000webhostapp.com', {
+		fetch('https://quiz-teendev-api.herokuapp.com/api/questions/all', {
 			method: 'POST',
 			headers: {
 				'Content-Type': "application/json"

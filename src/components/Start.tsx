@@ -6,7 +6,7 @@ const Start: React.FC = () => {
 
   useEffect(() => {
     // fetch('https://quiz-app-api-three.vercel.app/questions/all')
-    fetch('https://quizappapi.000webhostapp.com/')
+    fetch('https://quiz-teendev-api.herokuapp.com/api/questions/all')
       .then(response => response.json())
       .then(async json => {
         const data = await json
