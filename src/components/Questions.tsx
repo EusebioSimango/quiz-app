@@ -30,11 +30,11 @@ const Questions: React.FC = () => {
 	const handleSubmit: any = (e: any) => {
 		e.preventDefault()
 		const data: any = {
-			question: question,
-			a: optionA,
-			b: optionB,
-			c: optionC,
-			d: optionD,
+			question,
+			optionA,
+			optionB,
+			optionC,
+			optionD,
 			rightAnswer: rightOption
 		}
 		const inputQuestion: any = document.querySelector('#inputQuestion')!
