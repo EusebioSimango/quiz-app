@@ -35,7 +35,6 @@ const Game: React.FC = () => {
       li.style.transition = '.6s'
     })
     console.log('rendering:', id);
-    startCountDown()
     return setQuestion(questions[id])
   }
   const verifyQuestion = (id: number) => {
