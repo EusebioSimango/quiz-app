@@ -54,14 +54,14 @@ const Start: React.FC = () => {
   }
 
   const verifyAnswer = (id: any, question: any) => {
-    const rigthOption: any = (id === question.rightAnswer)
+    const rigthOption: any = (id === (question.rightAnswer).toLowerCase())
     const liElements = document.querySelectorAll('.option') as NodeListOf<HTMLLIElement>
 
     console.log(liElements)
 
     if (rigthOption) {
       liElements.forEach((li: any) => {
-        if (li.id === question.rightAnswer) {
+        if (li.id === (question.rightAnswer).toLowerCase()) {
           li.style.backgroundColor = 'green'
           li.style.color = '#fff'
         }

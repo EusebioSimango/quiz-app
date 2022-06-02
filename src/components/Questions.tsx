@@ -35,7 +35,7 @@ const Questions: React.FC = () => {
 			optionB,
 			optionC,
 			optionD,
-			rightAnswer: rightOption
+			rightAnswer: (rightOption).toLowerCase()
 		}
 		const inputQuestion: any = document.querySelector('#inputQuestion')!
 		setOptionA('')
