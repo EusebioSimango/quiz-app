@@ -5,18 +5,10 @@ import TimeOut from './TimeOut'
 const Game: React.FC = () => {
   const [questions, setQuestions] = useState<any>(null)
   const [score, setScore] = useState<number>(0)
-  //TEST
-  const [timeover, setTimeover] = useState<boolean>(false)
-
-  const startCountDown = () => {
-    setTimeout(() => {
-      Refdiv.current?.classList.add('active')
-    }, 15000)
-  }
 
   useEffect(() => {
     // fetch('https://quiz-app-api-three.vercel.app/questions/all')
-    fetch('http://localhost:8080/questions/all')
+    fetch('https://quiz-teendev-api.herokuapp.com/api/questions/all')
       .then(response => response.json())
       .then(async json => {
         const data = await json
@@ -64,14 +56,14 @@ const Game: React.FC = () => {
     return generateId()
   }
 
-  const verifyAnswer = (id: number, question: any) => {
-    const rigthOption: boolean = (id === question.rightAnswer)
+  const verifyAnswer = (id: any, question: any) => {
+    const rigthOption: any = (id === (question.rightAnswer).toLowerCase())
     const liElements = document.querySelectorAll('.option') as NodeListOf<HTMLLIElement>
 
 
     if (rigthOption) {
       liElements.forEach((li: any) => {
-        if (li.id === question.rightAnswer) {
+        if (li.id === (question.rightAnswer).toLowerCase()) {
           li.style.backgroundColor = 'green'
           li.style.color = '#fff'
         }
@@ -110,14 +102,14 @@ const Game: React.FC = () => {
           <p className="question">{question.question}</p>
           <ul className="options">
             <li className="option" id="a"
-              onClick={handleClick}>{question.a}</li>
+              onClick={handleClick}>{question.optionA}</li>
             <li className="option" id="b"
-              onClick={handleClick}>{question.b}</li>
+              onClick={handleClick}>{question.optionB}</li>
             <li className="option" id="c"
-              onClick={handleClick}>{question.c}</li>
+              onClick={handleClick}>{question.optionC}</li>
             <li className="option" id="d"
               onClick={handleClick}>
-              {question.d}</li>
+              {question.optionD}</li>
           </ul>
           <TimeOut Ref={Refdiv} />
         </div>
